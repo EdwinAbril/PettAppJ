@@ -4,36 +4,32 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Postulacion.Postulacion"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Administrador.Postulacion.GSPostulacionAdmin"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-       <title>Administrador</title>
+       <title>Postulacion</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/EstiloIngresoPostulacion.css">
+        <link rel="stylesheet" href="CSS/EstiloIngresoPostulacion1.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   	<script src="JQ/jquery-3.3.1.min.js"></script>
         <script src="JQ/main.js"></script>
+        <script src="JQ/main1.js"></script>
         
 </head>
     <body>
-    
-        <form action="IngresarPostulacionAdmin.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
-
-	<form action="../Menu/Administrador.jsp">
+	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-        
-            <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
-    
-    <h3 class="display-4">Administrador</h3>
+    <h3 class="display-4">Postulacion</h3>
     	        <%
                 ArrayList<GSPostulacionAdmin> dat = new ArrayList<>();
                 Postulacion co = new Postulacion();
-                dat=co.Consultar();
+                dat=co.ConsultaAdmin();
                 GSPostulacionAdmin cgsc= new GSPostulacionAdmin();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
@@ -69,7 +65,35 @@
                         </tr>
                         <tr>
                         <th>Certificado</th>
-                        <th><%=cgsc.getCer()%></th>
+                        <th><a href="../../<%=cgsc.getCer()%>"><%=cgsc.getCer()%></a></th>
+                        </tr>
+                        <tr>
+                        <th>Fotocopia Cedula</th>
+                        <th><a href="../../<%=cgsc.getCpf()%>"><%=cgsc.getCpf()%></a></th>
+                        </tr>
+                        <tr>
+                         <th>Estrato</th>
+                         <th><%=cgsc.getEst()%></th>
+                        </tr>
+                        <tr>
+                          <th>Cantidad de Residentes</th>
+                          <th><%=cgsc.getResi()%></th>
+                        </tr>
+                        <tr>
+                        <th>Ubicacion de Vivienda</th>
+                        <th><%=cgsc.getUbi()%></th>
+                        </tr>
+                        <tr>
+                         <th>Tipo de Vivienda</th>
+                         <th><%=cgsc.getTvi()%></th>
+                        </tr>
+                        <tr>
+                            <th>Puntaje</th>
+                            <th><%=cgsc.getRpun()%>/20</th>
+                        </tr>
+                        <tr>
+                            <th>Recibo Publico</th>
+                            <th><a href="../../<%=cgsc.getReci()%>"><%=cgsc.getReci()%></a></th>
                         </tr>
                         <tr>
                         <th>Cedula</th>
@@ -79,16 +103,24 @@
                         <th>Animal</th>
                         <th><%=cgsc.getCoda()%></th>
                         </tr>
-                        <tr>
-                        <th>Telefono</th>
-                        <th><%=cgsc.getTel()%></th>
-                        </tr>
-                        <tr>
-                             
+                    <tr>
                     
-                <form method='POST' action=''>
-                    <input type='hidden' name='nomA' value='<%=cgsc.getNom()%>'>
-                    <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
+                <form method='POST' action='../../ServletSeguimiento' enctype="multipart/form-data">
+                    <input type='hidden' name='codigo' value='<%=cgsc.getCod()%>'>
+                    <input type='hidden' name='telefono' value='<%=cgsc.getTel()%>'>
+                    <input type='hidden' name='direccion' value='<%=cgsc.getDir()%>'>
+                    <input type='hidden' name='fijo' value='<%=cgsc.getFij()%>'>
+                    <input type='hidden' name='cerp' value='<%=cgsc.getCer()%>'>
+                    <input type='hidden' name='cpf' value='<%=cgsc.getCpf()%>'>
+                    <input type='hidden' name='est' value='<%=cgsc.getEst()%>'>
+                    <input type='hidden' name='resi' value='<%=cgsc.getResi()%>'>
+                    <input type='hidden' name='ubi' value='<%=cgsc.getUbi()%>'>
+                    <input type='hidden' name='tvi' value='<%=cgsc.getTvi()%>'>
+                    <input type='hidden' name='repun' value='<%=cgsc.getRpun()%>'>
+                    <input type='hidden' name='rpub' value='<%=cgsc.getReci()%>'>
+                    <input type='hidden' name='cedula' value='<%=cgsc.getCed()%>'>
+                    <input type='hidden' name='animal' value='<%=cgsc.getCoda()%>'>
+                    <th><input type='submit' name='seguimien' value='Seguimiento' class='btn btn-info' ></th>
                 </form>
             
                 <form method='POST' action=''>
@@ -99,8 +131,7 @@
                 
                 </table>
 <!Enviar datos>                
-                <input  class='nme' type='hidden'  value='<%=cgsc.getNom()%>'>
-                <th><input class='elimin' type='button' value='Eliminar'></th>
+           
 <!Enviar datos>              
               
             </table>

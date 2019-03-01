@@ -1,9 +1,12 @@
 <%-- 
     Document   : Consultar_Ciudadano
-    Created on : 23/11/2018, 09:06:57 AM
+    Created on : 23/11/2018, 08:32:15 AM
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Ciudadano.Ciudadano"%>
+<%@page import="Modelo.Administrador.Ciudadano.GSCiudadanoAdmin"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,15 +21,10 @@
         
 </head>
     <body>
-        <form action="../Ciudadano/IngresarCiudadano_Adm.jsp">
-            <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
-  	</form>
-
-    
-	<form action="Menu/Ciudadano.jsp">
+	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
+       
     <h3 class="display-4">Ciudadano</h3>
     	        <%
                 ArrayList<GSCiudadanoAdmin> dat = new ArrayList<>();
@@ -75,11 +73,10 @@
                     <th><input type='submit' name='modificar' value='Modificar' class='btn btn-info' ></th>
                 </form>
             
-                <form method='POST' action=''>
-                    <input type='hidden' name='codfu' value=''>
-                    <th><input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'></th>
+                <form action="../../ServletCiudadano">
+                    <input type="hidden" name="cedula" value="<%=cgsc.getCed()%>">
+                    <th><input type="submit" name="eliminar" value="Eliminar" class="btn btn-danger"></th>
                 </form>
-                
                 
                 </table>
             </div>
