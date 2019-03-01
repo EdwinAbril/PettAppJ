@@ -3,34 +3,47 @@ package Modelo.Administrador.Adopcion;
 
 public class GSAdopcion {
 
-private int cod;
-private int ani;
-private int seg;
-private String men;
+    private String icon;
+    private int codap;
+    private int ani;
+    private String ced;
+    private String doc;
+    private String men;
 
-    public GSAdopcion(int cod, int ani, int seg, String men) {
-        this.cod = cod;
+    public GSAdopcion(String icon, int codap, int ani, String ced, String doc, String men) {
+        this.icon = icon;
+        this.codap = codap;
         this.ani = ani;
-        this.seg = seg;
+        this.ced = ced;
+        this.doc = doc;
         this.men = men;
     }
 
-    public GSAdopcion(int ani, int seg, String men) {
+    public GSAdopcion(String icon, int ani, String ced, String doc, String men) {
+        this.icon = icon;
         this.ani = ani;
-        this.seg = seg;
+        this.ced = ced;
+        this.doc = doc;
         this.men = men;
     }
 
     public GSAdopcion() {
     }
 
-
-    public int getCod() {
-        return cod;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setCod(int cod) {
-        this.cod = cod;
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public int getCodap() {
+        return codap;
+    }
+
+    public void setCodap(int codap) {
+        this.codap = codap;
     }
 
     public int getAni() {
@@ -41,12 +54,20 @@ private String men;
         this.ani = ani;
     }
 
-    public int getSeg() {
-        return seg;
+    public String getCed() {
+        return ced;
     }
 
-    public void setSeg(int seg) {
-        this.seg = seg;
+    public void setCed(String ced) {
+        this.ced = ced;
+    }
+
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
     }
 
     public String getMen() {
@@ -56,6 +77,6 @@ private String men;
     public void setMen(String men) {
         this.men = men;
     }
-    
+
     
 }

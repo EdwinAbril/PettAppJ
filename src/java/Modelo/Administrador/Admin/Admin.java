@@ -37,10 +37,10 @@ public class Admin {
         }
     }
     
-    public ArrayList<GSAdminAdmin> Consultar(){
+    public ArrayList<GSAdminAdmin> Consultar(String a){
         ArrayList<GSAdminAdmin> R = new ArrayList<>();
         try {
-            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login=1");
+            ps=cnn.prepareStatement("Select * from login_usuarios where rol_login=1 and nombre_usuario <> '"+a+"'");
             res=ps.executeQuery();
             while (res.next()) {
                 
@@ -69,6 +69,8 @@ public class Admin {
             }
             } catch (Exception e) {
             }
+        
+        JOptionPane.showMessageDialog(null, R);
             return R;
         }
     

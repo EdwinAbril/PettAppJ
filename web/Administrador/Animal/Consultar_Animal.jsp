@@ -21,14 +21,13 @@
         
 </head>
     <body>
-        <form action="IngresarAnimal_Adm.jsp">
+        <form action="IngresarAnimal_Admin.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
 
 	<form action="../Menu/Administrador.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Animal</h3>
     	        <%
                 ArrayList<GSAnimalAdmin> dat = new ArrayList<>();

@@ -1,9 +1,6 @@
-<%-- 
-    Document   : Consultar_Admin
-    Created on : 23/11/2018, 07:52:28 AM
-    Author     : KnokinGm
---%>
-
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.Usuario.GSUsuario"%>
+<%@page import="Modelo.Usuario.Usuario"%>
 <%@page import="Modelo.Administrador.Admin.Admin"%>
 <%@page import="Modelo.Administrador.Admin.GSAdminAdmin"%>
 <%@page import="java.util.ArrayList"%>
@@ -22,7 +19,10 @@
         
 </head>
     <body>
-    
+        <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nomA");
+        %>
         <form action="IngresarAdminAdmin.jsp">
             <input type="submit" name="nuevo" value="Insertar" class="btn btn-outline-dark" id="nuevo">
   	</form>
@@ -31,13 +31,12 @@
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
         
-    <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     <h3 class="display-4">Administrador</h3>
     	        <%
-                ArrayList<GSAdminAdmin> dat = new ArrayList<>();
-                Admin co = new Admin();
-                dat=co.Consultar();
-                GSAdminAdmin cgsc= new GSAdminAdmin();
+                ArrayList<GSUsuario> dat = new ArrayList<>();
+                Usuario co = new Usuario();
+                dat=co.ConsultarA(dat2);
+                GSUsuario cgsc= new GSUsuario();
                 for (int i = 0; i < dat.size() ; i++) {
                         cgsc=dat.get(i);
                 %>
@@ -54,6 +53,9 @@
                 
                 <div class="caja2">
                     <table class="table">
+                        <tr>
+                        <th colspan='2'><img src="../../Uploads/FotosUsuarios/<%=cgsc.getFot()%>" width="200" height="200"></th>
+                        </tr>
                         <tr>
                         <th>Usuario</th>
                         <th><%=cgsc.getNom()%></th>

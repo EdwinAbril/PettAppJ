@@ -1,6 +1,7 @@
 package Modelo.Administrador.Adopcion;
 
 import Controlador.conexion;
+import Modelo.Administrador.Animal.GSAnimalAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +22,7 @@ public class Adopcion {
             res=ps.executeQuery();
             while (res.next()) {
                 
-                GSAdopcion CF = new GSAdopcion(res.getInt(1),res.getInt(2),res.getInt(3),res.getString(4));
+                GSAdopcion CF = new GSAdopcion(res.getString(1),res.getInt(2),res.getInt(3),res.getString(4),res.getString(5),res.getString(6));
                 R.add(CF);
                 
                 
@@ -33,11 +34,12 @@ public class Adopcion {
     
     public void Ingresar_adop(GSAdopcion ing){
         try{
-            ps=cnn.prepareStatement("insert into adopcion values(?,?,?,?)");
-            ps.setInt(1,ing.getCod());
+            ps=cnn.prepareStatement("insert into adopcion (icono,animal,cedula,funcionario_encargado,mensaje) values(?,?,?,?,?)");
+            ps.setString(1,ing.getIcon());
             ps.setInt(2,ing.getAni());
-            ps.setInt(3,ing.getSeg());
-            ps.setString(4,ing.getMen());
+            ps.setString(3,ing.getCed());
+            ps.setString(4,ing.getDoc());
+            ps.setString(5,ing.getMen());
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null,"Proceso Finalizado Correctamente");
         
@@ -47,4 +49,23 @@ public class Adopcion {
             JOptionPane.showMessageDialog(null,"Error verifica los datos Ingresados");
         }
     }
+     public void Guardar_Adoptado(GSAdoptado ing){
+        try{
+            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,tamaño,genero,color,foto) values (?,?,?,?,?,?,?,?)");
+            ps.setString(1,ing.getNom());
+            ps.setString(2,ing.getTip());
+            ps.setString(3,ing.getEda());
+            ps.setString(4,ing.getRaz());
+            ps.setString(5,ing.getTam());
+            ps.setString(6,ing.getGen());
+            ps.setString(7,ing.getCol());
+            ps.setString(8,ing.getFot());
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+         JOptionPane.showMessageDialog(null, "No se ha podido Ingresar el Animal"+e);
+                    
+        }
+    }
+
 }

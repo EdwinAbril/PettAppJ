@@ -16,14 +16,18 @@
 	<title>PetApp</title>
 </head>
 <body>
-	<header id="encabezado">
-    <form action="../../Login/registro.jsp">
+        <%
+        HttpSession ht = request.getSession();
+        String dat2=(String)ht.getAttribute("nomA");
+        %>
+    <header id="encabezado">
+    <form action="../../Login/inicio.jsp">
     <input type="submit" name="cerrar" value="Cerrar Sesion" class="btn btn-light" id="sal">
     </form>
 
-		<h1>Administrador</h1>
-		<img src="Imagenes1/Admin3.png" id="Avatar" >
-	</header>
+    <h1>Administrador</h1>
+	<img src="Imagenes1/Admin3.png" id="Avatar" >
+    </header>
 
   
 
@@ -88,18 +92,7 @@
     </div> 
   </form>
 
-<form action="../../Administrador/Comentarios/Consultar_Comentario.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Comentarios</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Comentarios" src="Imagenes1/Comentarios.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-  </form>
+
 
 <form action="../Denuncia/Consultar_Denuncia.jsp">
 <div class="col-sm-4 col-xs-12">
@@ -128,7 +121,7 @@
   </form>
 
 
-    <form action="../Funcionario/Consultar_Funcionario.jsp">
+    <form action="../Funcionario/Consultar_Funcionarios.jsp">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
@@ -141,44 +134,20 @@
     </div>
   </form>
 
-<form action="../Mascota/Consultar_Mascota.jsp">
+<form action="../Veterinaria/Consultar_Veterinaria.jsp">
 <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center" id="divciudadano">
         <div class="panel-heading" id="verde">
-          <h1>Mascotas</h1>
+          <h1>Veterinaria</h1>
         </div>
         <div class="panel-body"><center>
-          <input type="image" name="Mascotas" src="Imagenes1/Mascotas.png" class="img-responsive slideanim" id="logoimagen"></center>
+          <input type="image" name="Veterinarias" src="Imagenes1/Veterinaria.png" class="img-responsive slideanim" id="logoimagen"></center>
         </div>
       </div>      
     </div>
   </form>
 
-<form action="../Postulacion/IngresarPostulacionAdmin.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Postulacion</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Eventos" src="Imagenes1/Postulacion.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div>
-    </form>  
 
-<form action="../../Seguimiento/Vista/Vista_Seguimiento.php">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano"> 
-        <div class="panel-heading" id="verde">
-          <h1>Seguimiento</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Eventos" src="Imagenes1/Seguimiento.png" class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div> 
-  </form>
 
 <form action="../Usuarios/usuarios.jsp">
 <div class="col-sm-4 col-xs-12">
@@ -193,18 +162,7 @@
     </div>
   </form>
 
-<form action="../Veterinaria/Consultar_Veterinaria.jsp">
-<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center" id="divciudadano">
-        <div class="panel-heading" id="verde">
-          <h1>Veterinaria</h1>
-        </div>
-        <div class="panel-body"><center>
-          <input type="image" name="Veterinaria" src="Imagenes1/Veterinaria.png"  class="img-responsive slideanim" id="logoimagen"></center>
-        </div>
-      </div>      
-    </div> 
-  </form>
+
   </center>
   
 </div>
