@@ -4,6 +4,9 @@
     Author     : KnokinGm
 --%>
 
+<%@page import="Modelo.Administrador.Funcionario.Funcionario"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Administrador.Funcionario.GSFuncionario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -23,7 +23,7 @@
         
 </head>
     <body>
-	<form action="../Menu/Administrador.jsp">
+	<form action="../Menu/Funcionario.jsp">
             <input type="submit" name="volver" value="Volver" class="btn btn-outline-dark" id="vol">
   	</form>
         

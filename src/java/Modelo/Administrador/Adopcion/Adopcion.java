@@ -51,7 +51,7 @@ public class Adopcion {
     }
      public void Guardar_Adoptado(GSAdoptado ing){
         try{
-            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,tamaño,genero,color,foto) values (?,?,?,?,?,?,?,?)");
+            ps=cnn.prepareStatement("insert into adoptados (nombre_animal,tipo_animal,edad_animal,raza_animal,tamano,genero,color,foto) values (?,?,?,?,?,?,?,?)");
             ps.setString(1,ing.getNom());
             ps.setString(2,ing.getTip());
             ps.setString(3,ing.getEda());
