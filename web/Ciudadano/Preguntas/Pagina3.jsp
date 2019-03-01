@@ -5,13 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Preguntas</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
+    <link rel="stylesheet" href="Estilos.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -24,7 +20,7 @@
             String datd=(String)ht.getAttribute("nom1");
             Integer ani=(Integer)ht.getAttribute("ani1");
         %>
-        <p>usu</p><%=datd%>
+        <%--<p>usu</p><%=datd%>--%>
         <%
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
@@ -39,7 +35,7 @@
             String dat11=request.getParameter("res11");
             String dat12=request.getParameter("res12");
         %>
-        <p>ani</p><%=ani%>
+        <%--<p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
         <p>res3</p><%=dat3%>
@@ -51,11 +47,13 @@
         <p>res9</p><%=dat9%>
         <p>res10</p><%=dat10%>
         <p>res11</p><%=dat11%>
-        <p>res12</p><%=dat12%>
+        <p>res12</p><%=dat12%>--%>
+        
     <div class="container-fluid">
 	<div class="row">
+            <div id="Preguntas">
 		<div class="col-md-12">
-			<h1>Encuesta</h1>
+                    <h1>Encuesta</h1><br>
                         <form action="Pagina4.jsp" method="Post">
 			<div class="row">
 				<div class="col-md-6">
@@ -68,7 +66,7 @@
 					          <input type="radio" required name="res13" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input type="radio" required name="res13" id="r2" value="0"><label for="r2">Naur</label>
+					          <input type="radio" required name="res13" id="r2" value="0"><label for="r2">No</label>
 					          </label>
 					        </div>
 					      </div>
@@ -80,7 +78,7 @@
 					          <input type="radio" required name="res14" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input type="radio" required name="res14" id="r2" value="0"><label for="r2">Naur</label>
+					          <input type="radio" required name="res14" id="r2" value="0"><label for="r2">No</label>
 					          </label>
 					        </div>
 					      </div>
@@ -92,7 +90,7 @@
 					          <input type="radio" required name="res15" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input type="radio" required name="res15" id="r2" value="0"><label for="r2">Naur</label>
+					          <input type="radio" required name="res15" id="r2" value="0"><label for="r2">No</label>
 					          </label>
 					        </div>
                                             </div>
@@ -110,7 +108,7 @@
 					          <input type="radio" required name="res16" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input type="radio" required name="res16" id="r2" value="0"><label for="r2">Naur</label>
+					          <input type="radio" required name="res16" id="r2" value="0"><label for="r2">No</label>
 					          </label>
 					        </div>
 					      </div>
@@ -122,7 +120,7 @@
 					          <input type="radio" required name="res17" id="r1" value="1" ><label for="r1">Si </label>
 					        </div>
 					        <div class="form-check" style="margin-left:20px;">
-					          <input type="radio" required name="res17" id="r2" value="0"><label for="r2">Naur</label>
+					          <input type="radio" required name="res17" id="r2" value="0"><label for="r2">No</label>
 					          </label>
 					        </div>
 					      </div>
@@ -167,6 +165,7 @@
                         }
                         %>
                     </form>
+                    <br>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>
 	</div>

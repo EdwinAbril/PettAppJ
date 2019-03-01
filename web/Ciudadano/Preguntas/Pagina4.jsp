@@ -5,13 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Preguntas</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
+    <link rel="stylesheet" href="Estilos.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -24,7 +20,7 @@
             String datd=(String)ht.getAttribute("nom1");
             Integer ani=(Integer)ht.getAttribute("ani1");
         %>
-        <p>usu</p><%=datd%>
+        <%--<p>usu</p><%=datd%>--%>
         <%
             String dat1=request.getParameter("res1");
             String dat2=request.getParameter("res2");
@@ -45,7 +41,8 @@
             String dat17=request.getParameter("res17");
             String dat18=request.getParameter("res18");
         %>
-        <p>ani</p><%=ani%>
+        
+        <%--<p>ani</p><%=ani%>
         <p>res1</p><%=dat1%>
         <p>res2</p><%=dat2%>
         <p>res3</p><%=dat3%>
@@ -63,11 +60,13 @@
         <p>res15</p><%=dat15%>
         <p>res16</p><%=dat16%>
         <p>res17</p><%=dat17%>
-        <p>res18</p><%=dat18%>
+        <p>res18</p><%=dat18%>--%>
+        
     <div class="container-fluid">
 	<div class="row">
+            <div id="Preguntas">
 		<div class="col-md-12">
-			<h1>Encuesta</h1>
+                    <h1>Encuesta</h1><br>
                         <form action="../../ServletInsertarPreguntas" method="Post">
 			<div class="row">
 				<div class="col-md-6">
@@ -129,6 +128,7 @@
                         }
                     %>
                     </form>
+                    <br>
                     <input type='submit' name='volve' value='Volver' class='btn btn-danger btn-sm'>
                 </div>
 	</div>
